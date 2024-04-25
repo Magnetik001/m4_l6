@@ -1,0 +1,34 @@
+player1 = int(input('Введите массу первого бойца: '))
+player2 = int(input('Введите массу второго бойца: '))
+
+def create_weight_category(player):
+    if player <= 75:
+        weight_category = 1
+        weight_category_string = 'Легкий вес'
+    elif player > 75 and player <= 100:
+        weight_category = 2
+        weight_category_string = 'Средний вес'
+    elif player > 100:
+        weight_category = 3
+        weight_category_string = 'Тяжелый вес'
+    return [weight_category, weight_category_string]
+
+weight_lst1 = create_weight_category(player1)
+weight_lst2 = create_weight_category(player2)
+
+weight_category_player1 = weight_lst1[0]
+weight_category_player2 = weight_lst2[0]
+
+weight_category_player1_string = weight_lst1[1]
+weight_category_player2_string = weight_lst2[1]
+
+def check_fight(weight_category1, weight_category2):
+    if weight_category1 == weight_category2:
+        return 'Оба бойца назодятся в одной весовой категории'
+    elif abs(weight_category1 - weight_category2) == 1:
+        return 'Разрешен нетитульный бой'
+    else:
+        return 'Бой запрещен'
+print(check_fight(weight_category_player1,weight_category_player2))
+print(f'Категория 1 - {weight_category_player1_string}')
+print(f'Категория 2 - {weight_category_player2_string}')
