@@ -1,0 +1,23 @@
+line1_pos1 = int(input('Введите начальную координату первой линии: '))
+line1_pos2 = int(input('Введите конечную координату первой линии: '))
+line2_pos1 = int(input('Введите начальную координату второй линии: '))
+line2_pos2 = int(input('Введите конечную координату второй линии: '))
+
+def create_line(pos1,pos2):
+    line = []
+    for i in range(pos1,pos2):
+        line.append(i)
+    return line
+
+line1 = create_line(line1_pos1,line1_pos2)
+line2 = create_line(line2_pos1,line2_pos2)
+
+count = 0
+intersected = []
+for i in line1:
+    if i in line2:
+        count += 1
+        intersected.append(i)
+
+print(f'Всего пересеченный точек {count}')
+print(f'Точки: {intersected}')
