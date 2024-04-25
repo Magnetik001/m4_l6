@@ -1,0 +1,19 @@
+while True:
+    text = input('Введите текст для преобразования: ').lower()
+    if text.isalpha() == False:
+        print('Текст не подходит для преобразования')
+        continue
+    new_text = ''
+    count = 0
+    for i in text: 
+        if count == 0:
+            lesson = i.upper()  
+        else:
+            lesson = i
+        if count == 0:
+            count += 1
+        else:
+            count -= 1
+        new_text += lesson
+    print(new_text)
+    break
