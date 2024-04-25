@@ -1,0 +1,7 @@
+while True:
+    main_text = input('Введите строку: ').lower()
+    under_text = input('Ведите подстроку: ').lower()
+    print('Совпадение есть!') if under_text in main_text else print('Совпадений нет!')
+    ans = input('Продолжить? (да/нет): ').lower()
+    if ans == 'нет':
+        break
